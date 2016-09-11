@@ -1,4 +1,11 @@
 var MyApp=angular.module('MyApp',[]);
 MyApp.controller('AppCtrl',['$scope','$http',function($scope,$http){
-		console.log("hello from controller");
+
+	$http.get('/contactList').success(function(response){
+		console.log("i got data requested");
+		$scope.contactList=response;
+	});
+
+	
+
 }])
